@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your_dockerhub_username/app"
+        DOCKER_IMAGE = "izor12/devops-app"
     }
 
     stages {
 
         stage('Clone') {
             steps {
-                git 'https://github.com/your-repo.git'
+                git 'https://github.com/VaradRane12/devops_docker.git'
             }
         }
 
