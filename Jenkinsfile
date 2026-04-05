@@ -12,7 +12,11 @@ pipeline {
                 sh 'docker build -t $DOCKER_IMAGE:latest .'
             }
         }
-
+        stage('Run Container') {
+    steps {
+        sh 'docker run --rm $DOCKER_IMAGE:latest'
+    }
+}
         stage('Login') {
             steps {
                 withCredentials([usernamePassword(
