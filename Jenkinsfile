@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "izor12/app"    
+        DOCKER_IMAGE = "izor12/python-app"
     }
 
     stages {
@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage('Push') {
+        stage('Push Image') {
             steps {
                 sh 'docker push $DOCKER_IMAGE:latest'
             }
