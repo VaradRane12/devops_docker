@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your_dockerhub_username/app"
+        DOCKER_IMAGE = "izor12/app"    
     }
 
     stages {
