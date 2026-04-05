@@ -2,20 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "izor12/devops-app"
+        DOCKER_IMAGE = "your_dockerhub_username/app"
     }
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/VaradRane12/devops_docker.git'
-            }
-        }
-
         stage('Build Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE .'
+                sh 'docker build -t $DOCKER_IMAGE:latest .'
             }
         }
 
@@ -33,7 +27,7 @@ pipeline {
 
         stage('Push') {
             steps {
-                sh 'docker push $DOCKER_IMAGE'
+                sh 'docker push $DOCKER_IMAGE:latest'
             }
         }
     }
